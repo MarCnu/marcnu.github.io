@@ -120,8 +120,9 @@ Go to [the Nvidia cuDNN website](https://developer.nvidia.com/cudnn), login and 
 
 ```
 tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
-sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include/
-sudo cp -P cuda/lib64/* /usr/local/cuda-8.0/lib64/
+cd cuda
+sudo cp include/cudnn.h /usr/local/cuda-8.0/include/
+sudo cp -P lib64/* /usr/local/cuda-8.0/lib64/
 ```
 
 That's it. As you see, it is quite easy to add or remove cuDNN and replace the it by another version of the library.
