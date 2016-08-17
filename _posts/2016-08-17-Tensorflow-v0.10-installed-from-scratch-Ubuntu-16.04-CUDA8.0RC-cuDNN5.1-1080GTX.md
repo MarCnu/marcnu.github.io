@@ -47,7 +47,7 @@ sudo sh cuda_8.0.27.1_linux.run
 
 ### Update paths in .bashrc
 
-The next part is to update CUDA_HOME, PATH and LD_LIBRARY_PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For people who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be active.
+The next part is to update CUDA_HOME, PATH and LD_LIBRARY_PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For those who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be active.
 
 ```
 cd /home/username/
