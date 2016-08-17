@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tensorflow v0.10 installed from sratch on Ubuntu 16.04, CUDA 8.0RC+Patch, cuDNN v5.1 with a 1080GTX
+title: Tensorflow v0.10 installed from scratch on Ubuntu 16.04, CUDA 8.0RC+Patch, cuDNN v5.1 with a 1080GTX
 ---
 
 ###### Draft
