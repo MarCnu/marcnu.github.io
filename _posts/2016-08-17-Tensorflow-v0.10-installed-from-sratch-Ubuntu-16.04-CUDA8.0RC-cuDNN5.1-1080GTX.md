@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tensorflow v0.10 installed from sratch on Ubuntu 16.04, CUDA8.0RC+Patch, cuDNN5.1 with a 1080GTX
+title: Tensorflow v0.10 installed from sratch on Ubuntu 16.04, CUDA 8.0RC+Patch, cuDNN v5.1 with a 1080GTX
 ---
 
 ###### Draft
@@ -13,9 +13,73 @@ The first step is to get the latest Nvidia drivers. While you can use `apt-get`,
 
 Go to [Nvidia's download website](http://www.nvidia.fr/Download/index.aspx) and download the latest version of the driver, here for Linux 64-bit. In my case, `NVIDIA-Linux-x86_64-367.35.run`.
 
+As drivers for graphic devices are running at a low level, you must exit the GUI with `sudo service lightdm stop` and set the [RunLevel](https://fr.wikipedia.org/wiki/Run_level) to 3 with the program `init`.
+
+Then, move to the directory where you downloaded the .run file and run it. You will be asked to confirm several things, the pre-install of something failure, no 32-bit libraries and more. Just continue to the end. Once it is done, reboot.
+
 ```
 sudo service lightdm stop
 sudo init 3
 sudo sh NVIDIA-Linux-x86_64-367.35.run
 sudo reboot
 ```
+
+###### Login loop issue after updates
+
+Due to the manual installation, it seems that when you do Ubuntu updates, they may install the `apt-get` version of the driver. This causes a failure when you start the computer and login, you will get a black screen and go back to the login screen.
+
+The solution is to enter the terminal with `CTRL+ALT+1` and reinstall the driver just like before. Note that you can get back to the GUI with `Alt+7` when you are in the terminal.
+
+## 2. Installing CUDA
+
+It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia.com/cuda-release-candidate-download) and create an account (I think this is only required for RC versions of CUDA, which is the case currently for CUDA 8.0RC).
+
+Choose Linux > x86_64 > Ubuntu > 16.04 > runfile (local) and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
+
+The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, say no when asked if you want to install the driver. Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
+
+```
+sudo sh cuda_8.0.27_linux.run --override
+sudo sh cuda_8.0.27.1_linux.run
+```
+
+Then, you can check is CUDA is working by moving to the sample directory and compiling `bandwidthTest`.
+
+```
+cd NVIDIA_CUDA-8.0_Samples/1_Utilities/bandwidthTest/
+make
+./bandwitdhTest
+```
+
+You should get an output that looks like this:
+
+> [CUDA Bandwidth Test] - Starting...
+> Running on...
+> 
+> Device 0: GeForce GTX 1080
+> Quick Mode
+> 
+> Host to Device Bandwidth, 1 Device(s)
+> PINNED Memory Transfers
+>   Transfer Size (Bytes)	Bandwidth(MB/s)
+>   33554432			12038.9
+> 
+> Device to Host Bandwidth, 1 Device(s)
+> PINNED Memory Transfers
+>   Transfer Size (Bytes)	Bandwidth(MB/s)
+>   33554432			12832.1
+> 
+> Device to Device Bandwidth, 1 Device(s)
+> PINNED Memory Transfers
+>   Transfer Size (Bytes)	Bandwidth(MB/s)
+>   33554432			231046.9
+> 
+>Result = PASS
+> 
+>NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+
+
+## 3. Installing cuDNN
+
+## 4. Installing Tensorflow
