@@ -52,8 +52,10 @@ gedit .bashrc
 
 At the bottom of the file, add the following lines and save:
 
+```
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
 
 You can then reload `.bashrc` and check that the paths have been properly modified.
 
