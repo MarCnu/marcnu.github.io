@@ -36,7 +36,7 @@ The solution is to enter the terminal with `CTRL+ALT+F1` and reinstall the drive
 
 It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia.com/cuda-release-candidate-download) and create an account if you don't already have one and log in (I think this is only required for RC versions of CUDA, which is the case currently for CUDA 8.0RC, an account is also required to download cdDNN).
 
-Choose Linux > x86_64 > Ubuntu > 16.04 > runfile (local) and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
+Choose **Linux > x86_64 > Ubuntu > 16.04 > runfile (local)** and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
 
 The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, say no when asked if you want to install the driver (in Nvidia's install guide, they tell use to enter RunLevel 3, but this isn't necessary if we don't install the driver). Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
 
@@ -113,5 +113,14 @@ You should get an output that looks like this:
 You can now move to cuDNN!
 
 ## 3. Installing cuDNN
+
+Go to [the Nvidia cuDNN website](https://developer.nvidia.com/cudnn), login and download **Download cuDNN v5.1 (August 10, 2016), for CUDA 8.0 RC > cuDNN v5.1 Library for Linux**. Unzip the .tgz file and copy the files to the cuda-8.0 folder. Some of the .so files are links to the real .so file, to preserve the links and avoid pure copy, use `cp -P`.
+
+```
+sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include/
+sudo cp -P cuda/lib64/* /usr/local/cuda-8.0/lib64/
+```
+
+That's it.
 
 ## 4. Installing Tensorflow
