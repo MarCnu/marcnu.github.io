@@ -5,11 +5,6 @@ title: Tensorflow v0.10 installed from sratch on Ubuntu 16.04, CUDA8.0RC+Patch, 
 
 ###### Draft
 
-######Draft
-
-###### Draft
-plop
-
 While Tensorflow has a great documentation, you have quite a lot of details that are not obvious, especially the part about setting up Nvidia libraries. So here is a guide, explaining everything from scratch.
 
 ## 1. Installing Nvidia drivers
