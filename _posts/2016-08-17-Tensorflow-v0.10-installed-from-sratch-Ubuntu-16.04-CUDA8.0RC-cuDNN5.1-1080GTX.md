@@ -28,7 +28,7 @@ sudo reboot
 
 Due to the manual installation, it seems that when you do Ubuntu updates, they may install the `apt-get` version of the driver. This causes a failure when you start the computer and login, you will get a black screen and go back to the login screen.
 
-The solution is to enter the terminal with `CTRL+ALT+1` and reinstall the driver just like before. Note that you can get back to the GUI with `Alt+7` when you are in the terminal.
+The solution is to enter the terminal with `CTRL+ALT+F1` and reinstall the driver just like before. Note that you can get back to the GUI with `Alt+F7` when you are in the terminal.
 
 ## 2. Installing CUDA
 
