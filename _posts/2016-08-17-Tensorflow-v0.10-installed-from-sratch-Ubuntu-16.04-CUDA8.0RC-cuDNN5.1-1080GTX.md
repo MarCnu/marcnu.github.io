@@ -32,6 +32,8 @@ The solution is to enter the terminal with `CTRL+ALT+1` and reinstall the driver
 
 ## 2. Installing CUDA
 
+### Install the Toolkit
+
 It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia.com/cuda-release-candidate-download) and create an account if you don't already have one and log in (I think this is only required for RC versions of CUDA, which is the case currently for CUDA 8.0RC, an account is also required to download cdDNN).
 
 Choose Linux > x86_64 > Ubuntu > 16.04 > runfile (local) and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
@@ -43,7 +45,9 @@ sudo sh cuda_8.0.27_linux.run --override
 sudo sh cuda_8.0.27.1_linux.run
 ```
 
-The final part is to update the PATH and LD_LIBRARY_PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For people who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be active.
+### Update paths in .bashrc
+
+The next part is to update PATH and LD_LIBRARY_PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For people who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be active.
 
 ```
 cd /home/username/
@@ -64,6 +68,8 @@ source ~/.bashrc
 echo $PATH
 echo $LD_LIBRARY_PATH
 ```
+
+### Check that CUDA is working
 
 Then, you can check is CUDA is working by moving to the sample directory and compiling `bandwidthTest`.
 
