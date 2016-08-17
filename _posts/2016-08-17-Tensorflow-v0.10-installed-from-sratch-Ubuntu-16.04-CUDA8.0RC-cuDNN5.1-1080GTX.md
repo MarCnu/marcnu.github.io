@@ -9,7 +9,7 @@ While Tensorflow has a great documentation, you have quite a lot of details that
 
 ## 1. Installing Nvidia drivers
 
-The first step is to get the latest Nvidia drivers. While you can use `apt-get`, this causes a lot of issues with automatic updates. It is safer to do everything manually.
+The first step is to get the latest Nvidia driver. While you can use `apt-get`, this causes a lot of issues with automatic updates. It is safer to do everything manually.
 
 Go to [Nvidia's download website](http://www.nvidia.fr/Download/index.aspx) and download the latest version of the driver, here for Linux 64-bit. In my case, `NVIDIA-Linux-x86_64-367.35.run`.
 
@@ -36,7 +36,7 @@ It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia
 
 Choose Linux > x86_64 > Ubuntu > 16.04 > runfile (local) and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
 
-The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, say no when asked if you want to install the driver. Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
+The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, say no when asked if you want to install the driver (in Nvidia's install guide, they tell use to enter RunLevel 3, but this isn't necessary if we don't install the driver). Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
 
 ```
 sudo sh cuda_8.0.27_linux.run --override
@@ -91,11 +91,14 @@ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 You can then reload `.bashrc` and check that the paths have been properly modified.
+
 ```
 source ~/.bashrc
 echo $PATH
 echo $LD_LIBRARY_PATH
 ```
+
+You can now move to cuDNN!
 
 ## 3. Installing cuDNN
 
