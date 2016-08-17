@@ -15,7 +15,7 @@ code {
   font-family:'Bitstream Vera Sans Mono','Courier', monospace;
 }
 
-code:not(.highlight) {
+:not(pre) > code {
   background-color: #efefef;
   border: 1px solid #ddd;
 }
