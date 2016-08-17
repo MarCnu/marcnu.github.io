@@ -16,4 +16,4 @@ sudo service lightdm stop
 sudo init 3
 sudo sh NVIDIA-Linux-x86_64-367.35.run
 sudo reboot
-``̀
+```
