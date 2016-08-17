@@ -124,6 +124,6 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include/
 sudo cp -P cuda/lib64/* /usr/local/cuda-8.0/lib64/
 ```
 
-That's it.
+That's it. As you see, it is quite easy to remove cuDNN and replace the it by another version of the library.
 
 ## 4. Installing Tensorflow
