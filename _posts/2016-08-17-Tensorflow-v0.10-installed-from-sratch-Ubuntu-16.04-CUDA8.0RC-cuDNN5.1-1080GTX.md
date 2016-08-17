@@ -71,7 +71,11 @@ echo $LD_LIBRARY_PATH
 
 ### Check that CUDA is working
 
-Then, you can check is CUDA is working by moving to the sample directory and compiling `bandwidthTest`.
+Then, you can check is CUDA is working by checking the version of `nvcc` the CUDA compiler and also by moving to the sample directory and compiling `bandwidthTest`.
+
+```
+nvcc --version
+```
 
 ```
 cd NVIDIA_CUDA-8.0_Samples/1_Utilities/bandwidthTest/
