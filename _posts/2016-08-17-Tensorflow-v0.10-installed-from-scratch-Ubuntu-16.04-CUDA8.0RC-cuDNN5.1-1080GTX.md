@@ -116,13 +116,13 @@ You can now move to cuDNN!
 
 ## 3. Installing cuDNN
 
-Go to [the Nvidia cuDNN website](https://developer.nvidia.com/cudnn), login and download **Download cuDNN v5.1 (August 10, 2016), for CUDA 8.0 RC > cuDNN v5.1 Library for Linux**. Unzip the .tgz file and copy the files to the cuda-8.0 folder. Some of the .so files are links to the real .so file, to preserve the links and avoid pure copy, use `cp -P`.
+Go to [the Nvidia cuDNN website](https://developer.nvidia.com/cudnn), login and download **Download cuDNN v5.1 (August 10, 2016), for CUDA 8.0 RC > cuDNN v5.1 Library for Linux**. Unzip the .tgz file and copy the files to the cuda-8.0 folder. Note that some of the .so files are links to the "real" .so file, by copying it, we duplicate the file, that way, when building Tensorflow from source, any cuDNN version will give libcudnn.so.5.1.5.
 
 ```
 tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
 cd cuda
 sudo cp include/cudnn.h /usr/local/cuda-8.0/include/
-sudo cp -P lib64/* /usr/local/cuda-8.0/lib64/
+sudo cp lib64/* /usr/local/cuda-8.0/lib64/
 ```
 
 That's it. As you see, it is quite easy to add or remove cuDNN and replace the it by another version of the library.
