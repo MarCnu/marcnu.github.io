@@ -43,6 +43,26 @@ sudo sh cuda_8.0.27_linux.run --override
 sudo sh cuda_8.0.27.1_linux.run
 ```
 
+The final part is to update the PATH and LD_LIBRARY_PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For people who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be active.
+
+```
+cd /home/username/
+gedit .bashrc
+```
+
+At the bottom of the file, add the following lines and save:
+
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+You can then reload `.bashrc` and check that the paths have been properly modified.
+
+```
+source ~/.bashrc
+echo $PATH
+echo $LD_LIBRARY_PATH
+```
+
 Then, you can check is CUDA is working by moving to the sample directory and compiling `bandwidthTest`.
 
 ```
@@ -77,26 +97,6 @@ You should get an output that looks like this:
 >Result = PASS
 > 
 >NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
-
-The final part is to update the PATH. Move to your home folder and update `.bashrc` then reload `.bashrc` with the command `source`. For people who are not Linux experts, `.bashrc` is a file with user parameters that is launched when you login, you must reload it or restart the session for the changes to be valid.
-
-```
-cd /home/username/
-gedit .bashrc
-```
-
-At the bottom of the file, add the following lines and save:
-
-export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-You can then reload `.bashrc` and check that the paths have been properly modified.
-
-```
-source ~/.bashrc
-echo $PATH
-echo $LD_LIBRARY_PATH
-```
 
 You can now move to cuDNN!
 
