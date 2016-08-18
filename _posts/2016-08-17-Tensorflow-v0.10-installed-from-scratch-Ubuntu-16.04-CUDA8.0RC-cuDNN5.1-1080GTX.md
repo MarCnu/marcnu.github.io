@@ -238,6 +238,8 @@ pip install /tmp/tensorflow_pkg/tensorflow-0.10.0-py2-none-any.whl
 
 That's it, Tensorflow is installed!
 
+### (Optional) Check that Tensorflow is working
+
 You can create a test.py file with the following code and run it to check that everything is working and that the GPU is recognised.
 
 ```python
