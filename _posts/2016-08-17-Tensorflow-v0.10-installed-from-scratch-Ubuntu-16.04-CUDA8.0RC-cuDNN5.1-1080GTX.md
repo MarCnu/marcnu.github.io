@@ -174,7 +174,7 @@ Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `
   cxx_builtin_include_directory: "/usr/lib/gcc/"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
-  **cxx_builtin_include_directory: "/usr/local/cuda-8.0"**
+  cxx_builtin_include_directory: "/usr/local/cuda-8.0"
   tool_path { name: "gcov" path: "/usr/bin/gcov" }
 ```
 
