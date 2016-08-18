@@ -93,23 +93,23 @@ You should get an output that looks like this:
 > Device 0: GeForce GTX 1080
 > Quick Mode
 > 
-> Host to Device Bandwidth, 1 Device(s)
-> PINNED Memory Transfers
->   Transfer Size (Bytes)	Bandwidth(MB/s)
->   33554432			12038.9
-> 
-> Device to Host Bandwidth, 1 Device(s)
-> PINNED Memory Transfers
->   Transfer Size (Bytes)	Bandwidth(MB/s)
->   33554432			12832.1
-> 
-> Device to Device Bandwidth, 1 Device(s)
-> PINNED Memory Transfers
->   Transfer Size (Bytes)	Bandwidth(MB/s)
->   33554432			231046.9
-> 
+> Host to Device Bandwidth, 1 Device(s)  
+> PINNED Memory Transfers  
+>   Transfer Size (Bytes)	Bandwidth(MB/s)  
+>   33554432			12038.9  
+>   
+> Device to Host Bandwidth, 1 Device(s)  
+> PINNED Memory Transfers  
+>   Transfer Size (Bytes)	Bandwidth(MB/s)  
+>   33554432			12832.1  
+>   
+> Device to Device Bandwidth, 1 Device(s)  
+> PINNED Memory Transfers  
+>   Transfer Size (Bytes)	Bandwidth(MB/s)  
+>   33554432			231046.9  
+>   
 >Result = PASS
-> 
+>   
 >NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
 
 You can now move to cuDNN!
@@ -182,16 +182,16 @@ Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `
 
 If you don't do this, you will get an error that looks like this:
 
-> ERROR: /home/marceau/Documents/retest/tensorflow/tensorflow/contrib/rnn/BUILD:46:1: undeclared inclusion(s) in rule '//tensorflow/contrib/rnn:python/ops/_lstm_ops_gpu':
-> this rule is missing dependency declarations for the following files included by 'tensorflow/contrib/rnn/kernels/lstm_ops_gpu.cu.cc':
->   '/usr/local/cuda-8.0/include/cuda_runtime.h'
->   '/usr/local/cuda-8.0/include/host_config.h'
->   ...
->   '/usr/local/cuda-8.0/include/curand_discrete2.h'.
-> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.
-> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.
-> Target //tensorflow/tools/pip_package:build_pip_package failed to build
-> Use --verbose_failures to see the command lines of failed build steps.
+> ERROR: /home/marceau/Documents/retest/tensorflow/tensorflow/contrib/rnn/BUILD:46:1: undeclared inclusion(s) in rule '//tensorflow/contrib/rnn:python/ops/_lstm_ops_gpu':  
+> this rule is missing dependency declarations for the following files included by 'tensorflow/contrib/rnn/kernels/lstm_ops_gpu.cu.cc':  
+>   '/usr/local/cuda-8.0/include/cuda_runtime.h'  
+>   '/usr/local/cuda-8.0/include/host_config.h'  
+>   ...  
+>   '/usr/local/cuda-8.0/include/curand_discrete2.h'.  
+> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.  
+> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.  
+> Target //tensorflow/tools/pip_package:build_pip_package failed to build  
+> Use --verbose_failures to see the command lines of failed build steps.  
 > INFO: Elapsed time: 203.657s, Critical Path: 162.10s
 
 
