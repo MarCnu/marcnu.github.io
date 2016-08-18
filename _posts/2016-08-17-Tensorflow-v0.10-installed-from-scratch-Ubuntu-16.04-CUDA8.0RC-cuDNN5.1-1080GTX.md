@@ -257,3 +257,23 @@ print(sess.run(a + b))
 ```
 python test.py
 ```
+
+>I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcublas.so.8.0 locally  
+>I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcudnn.so.5 locally  
+>I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcufft.so.8.0 locally  
+>I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcuda.so.1 locally  
+>I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcurand.so.8.0 locally  
+>I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:925] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero  
+>I tensorflow/core/common_runtime/gpu/gpu_init.cc:118] Found device 0 with properties:   
+>name: GeForce GTX 1080  
+>major: 6 minor: 1 memoryClockRate (GHz) 1.797  
+>pciBusID 0000:01:00.0  
+>Total memory: 7.92GiB  
+>Free memory: 7.52GiB  
+>I tensorflow/core/common_runtime/gpu/gpu_init.cc:138] DMA: 0   
+>I tensorflow/core/common_runtime/gpu/gpu_init.cc:148] 0:   Y   
+>I tensorflow/core/common_runtime/gpu/gpu_device.cc:870] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0)  
+>Hello, TensorFlow!  
+>42
+
+You can now start having fun.
