@@ -237,9 +237,9 @@ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 pip install /tmp/tensorflow_pkg/tensorflow-0.10.0-py2-none-any.whl
 ```
 
-Tensorflow is now installed.
+That's it, Tensorflow is installed!
 
-You can now create a test.py file with the following code and run it.
+You can create a test.py file with the following code and run it to check that everything is working and that the GPU is recognised.
 
 ```python
 import tensorflow as tf
