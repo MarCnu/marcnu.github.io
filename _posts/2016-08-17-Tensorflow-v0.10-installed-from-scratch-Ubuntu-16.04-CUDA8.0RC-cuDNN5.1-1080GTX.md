@@ -201,15 +201,15 @@ You can now run the configure script. If you have only cuda 8.0, then leaving ev
 ./configure
 ```
 
-> Please specify the location of python. [Default is /usr/bin/python]: 
-> Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] N
-> No Google Cloud Platform support will be enabled for TensorFlow
-> Found possible Python library paths:
-  /usr/local/lib/python2.7/dist-packages
-  /usr/lib/python2.7/dist-packages
-> Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
-
-/usr/local/lib/python2.7/dist-packages
+> Please specify the location of python. [Default is /usr/bin/python]:   
+> Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] N  
+> No Google Cloud Platform support will be enabled for TensorFlow  
+> Found possible Python library paths:  
+>   /usr/local/lib/python2.7/dist-packages  
+>   /usr/lib/python2.7/dist-packages  
+> Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]  
+>   
+> /usr/local/lib/python2.7/dist-packages  
 > Do you wish to build TensorFlow with GPU support? [y/N] y  
 > GPU support will be enabled for TensorFlow  
 > Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:   
