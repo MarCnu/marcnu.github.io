@@ -220,8 +220,8 @@ You can now run the configure script. If you have only cuda 8.0, then leaving ev
 > libcudnn.so resolves to libcudnn.5  
 > Please specify a list of comma-separated Cuda compute capabilities you want to build with.  
 > You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.  
-> **Please note that each additional compute capability significantly increases your build time and binary size.
-[Default is: "3.5,5.2"]: 6.1**  
+> Please note that each additional compute capability significantly increases your build time and binary size.  
+> **[Default is: "3.5,5.2"]: 6.1**  
 > Setting up Cuda include  
 > Setting up Cuda lib64  
 > Setting up Cuda bin  
