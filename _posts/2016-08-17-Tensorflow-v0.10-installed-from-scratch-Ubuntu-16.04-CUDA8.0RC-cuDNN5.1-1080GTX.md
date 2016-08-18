@@ -166,7 +166,7 @@ git clone -b r0.10 https://github.com/tensorflow/tensorflow
 cd tensorflow
 ```
 
-#### Important: fix CROSSTOOL file
+###### Important: fix CROSSTOOL file
 
 Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `cxx_builtin_include_directory: "/usr/local/cuda-8.0"` as below.
 
