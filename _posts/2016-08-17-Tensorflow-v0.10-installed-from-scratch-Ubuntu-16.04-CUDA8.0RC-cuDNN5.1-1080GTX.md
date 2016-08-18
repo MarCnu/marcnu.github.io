@@ -180,7 +180,7 @@ Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `
 
 If you don't do this, you will get an error that looks like this:
 
-> ERROR: /home/marceau/Documents/retest/tensorflow/tensorflow/contrib/rnn/BUILD:46:1: undeclared inclusion(s) in rule '//tensorflow/contrib/rnn:python/ops/_lstm_ops_gpu':  
+> ERROR: /home/marcnu/Documents/retest/tensorflow/tensorflow/contrib/rnn/BUILD:46:1: undeclared inclusion(s) in rule '//tensorflow/contrib/rnn:python/ops/_lstm_ops_gpu':  
 > this rule is missing dependency declarations for the following files included by 'tensorflow/contrib/rnn/kernels/lstm_ops_gpu.cu.cc':  
 >   '/usr/local/cuda-8.0/include/cuda_runtime.h'  
 >   '/usr/local/cuda-8.0/include/host_config.h'  
