@@ -15,7 +15,7 @@ As drivers for graphic devices are running at a low level, you must exit the GUI
 
 Then, move to the directory where you downloaded the .run file and run it. You will be asked to confirm several things, the pre-install of something failure, no 32-bit libraries and more. Just continue to the end. Once it is done, reboot.
 
-```
+```bash
 sudo service lightdm stop
 sudo init 3
 sudo sh NVIDIA-Linux-x86_64-367.35.run
