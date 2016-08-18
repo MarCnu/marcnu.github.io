@@ -128,3 +128,132 @@ sudo cp lib64/* /usr/local/cuda-8.0/lib64/
 That's it. As you see, it is quite easy to add or remove cuDNN and replace the it by another version of the library.
 
 ## 4. Installing Tensorflow
+
+It's now time to install Tensorflow from source as the official binaries are only for CUDA 7.5. We will install it for Python2.7.
+
+### Install dependencies
+First, install some general dependancies.
+
+```
+sudo apt-get install python-pip python-dev python-numpy swig python-dev python-wheel
+```
+
+### Install Bazel
+
+Then install [Bazel](http://bazel.io/docs/install.html), a build tool from Google.
+
+First, you need to download and install JDK 8.
+
+```
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+
+It's now time to get Bazel.
+
+```
+echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+curl https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install bazel
+sudo apt-get upgrade bazel
+```
+
+### Install Tensorflow itself
+
+First, you must get the code from Github. You can either take the most recent master branch (lots of new commits) or the latest release branch (should be more stable, but still updated every few days). Here, we get branch r0.10.
+
+```
+git clone -b r0.10 https://github.com/tensorflow/tensorflow
+cd tensorflow
+```
+
+#### Important: fix CROSSTOOL file
+
+Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `cxx_builtin_include_directory: "/usr/local/cuda-8.0"` as below.
+
+```
+  cxx_builtin_include_directory: "/usr/lib/gcc/"
+  cxx_builtin_include_directory: "/usr/local/include"
+  cxx_builtin_include_directory: "/usr/include"
+  cxx_builtin_include_directory: "/usr/local/cuda-8.0"
+  tool_path { name: "gcov" path: "/usr/bin/gcov" }
+```
+
+If you don't do this, you will get an error that looks like this:
+
+> ERROR: /home/marceau/Documents/retest/tensorflow/tensorflow/contrib/rnn/BUILD:46:1: undeclared inclusion(s) in rule '//tensorflow/contrib/rnn:python/ops/_lstm_ops_gpu':
+> this rule is missing dependency declarations for the following files included by 'tensorflow/contrib/rnn/kernels/lstm_ops_gpu.cu.cc':
+>   '/usr/local/cuda-8.0/include/cuda_runtime.h'
+>   '/usr/local/cuda-8.0/include/host_config.h'
+>   ...
+>   '/usr/local/cuda-8.0/include/curand_discrete2.h'.
+> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.
+> nvcc warning : option '--relaxed-constexpr' has been deprecated and replaced by option '--expt-relaxed-constexpr'.
+> Target //tensorflow/tools/pip_package:build_pip_package failed to build
+> Use --verbose_failures to see the command lines of failed build steps.
+> INFO: Elapsed time: 203.657s, Critical Path: 162.10s
+
+
+You can now run the configure script. If you have only cuda 8.0, then leaving everything as default should be fine. I just provided the compute capability of my GPU, in my case 6.1.
+
+```
+./configure
+Please specify the location of python. [Default is /usr/bin/python]: 
+Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] N
+No Google Cloud Platform support will be enabled for TensorFlow
+Found possible Python library paths:
+  /usr/local/lib/python2.7/dist-packages
+  /usr/lib/python2.7/dist-packages
+Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
+
+/usr/local/lib/python2.7/dist-packages
+Do you wish to build TensorFlow with GPU support? [y/N] y
+GPU support will be enabled for TensorFlow
+Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: 
+Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: 
+Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
+Please specify the Cudnn version you want to use. [Leave empty to use system default]: 
+Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
+libcudnn.so resolves to libcudnn.5
+Please specify a list of comma-separated Cuda compute capabilities you want to build with.
+You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
+Please note that each additional compute capability significantly increases your build time and binary size.
+[Default is: "3.5,5.2"]: 6.1
+Setting up Cuda include
+Setting up Cuda lib64
+Setting up Cuda bin
+Setting up Cuda nvvm
+Setting up CUPTI include
+Setting up CUPTI lib64
+Configuration finished
+```
+
+You can then run Bazel. The build will take quite a lot of time, 900s on my PC. Then, create the pip package and install it with pip. The name of the pip package may be different depending of Tensorflow's version.
+
+```
+bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+pip install /tmp/tensorflow_pkg/tensorflow-0.10.0-py2-none-any.whl
+```
+
+Tensorflow is now installed.
+
+You can now create a test.py file with the following code and run it.
+
+```python
+import tensorflow as tf
+
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+# Hello, TensorFlow!
+a = tf.constant(10)
+b = tf.constant(32)
+print(sess.run(a + b))
+# 42
+```
+
+```
+python test.py
+```
