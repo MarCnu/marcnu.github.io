@@ -199,35 +199,36 @@ You can now run the configure script. If you have only cuda 8.0, then leaving ev
 
 ```
 ./configure
-Please specify the location of python. [Default is /usr/bin/python]: 
-Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] N
-No Google Cloud Platform support will be enabled for TensorFlow
-Found possible Python library paths:
+```
+
+> Please specify the location of python. [Default is /usr/bin/python]: 
+> Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] N
+> No Google Cloud Platform support will be enabled for TensorFlow
+> Found possible Python library paths:
   /usr/local/lib/python2.7/dist-packages
   /usr/lib/python2.7/dist-packages
-Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
+> Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
 
 /usr/local/lib/python2.7/dist-packages
-Do you wish to build TensorFlow with GPU support? [y/N] y
-GPU support will be enabled for TensorFlow
-Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: 
-Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: 
-Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
-Please specify the Cudnn version you want to use. [Leave empty to use system default]: 
-Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
-libcudnn.so resolves to libcudnn.5
-Please specify a list of comma-separated Cuda compute capabilities you want to build with.
-You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
-Please note that each additional compute capability significantly increases your build time and binary size.
-[Default is: "3.5,5.2"]: 6.1
-Setting up Cuda include
-Setting up Cuda lib64
-Setting up Cuda bin
-Setting up Cuda nvvm
-Setting up CUPTI include
-Setting up CUPTI lib64
-Configuration finished
-```
+> Do you wish to build TensorFlow with GPU support? [y/N] y  
+> GPU support will be enabled for TensorFlow  
+> Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:   
+> Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]:   
+> Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:   
+> Please specify the Cudnn version you want to use. [Leave empty to use system default]:   
+> Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:   
+> libcudnn.so resolves to libcudnn.5  
+> Please specify a list of comma-separated Cuda compute capabilities you want to build with.  
+> You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.  
+> Please note that each additional compute capability significantly increases your build time and binary size.
+[Default is: "3.5,5.2"]: 6.1  
+> Setting up Cuda include  
+> Setting up Cuda lib64  
+> Setting up Cuda bin  
+> Setting up Cuda nvvm  
+> Setting up CUPTI include  
+> Setting up CUPTI lib64  
+> Configuration finished  
 
 You can then run Bazel. The build will take quite a lot of time, 900s on my PC. Then, create the pip package and install it with pip. The name of the pip package may be different depending of Tensorflow's version.
 
