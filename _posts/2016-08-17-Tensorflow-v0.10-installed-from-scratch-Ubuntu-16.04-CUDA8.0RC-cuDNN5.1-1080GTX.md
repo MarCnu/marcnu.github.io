@@ -7,7 +7,7 @@ While Tensorflow has a great documentation, you have quite a lot of details that
 
 ## 1. Installing Nvidia drivers
 
-The first step is to get the latest Nvidia driver. While you can use `apt-get`, this causes a lot of issues with automatic updates. It is safer to do everything manually.
+The first step is to get the latest Nvidia driver. While you can use `apt-get` to install the driver and CUDA, this causes a lot of issues with automatic updates and you need to purge everything to reinstall a new version. It is simpler to do everything manually.
 
 Go to [Nvidia's download website](http://www.nvidia.fr/Download/index.aspx) and download the latest version of the driver, here for Linux 64-bit. In my case, `NVIDIA-Linux-x86_64-367.35.run`.
 
