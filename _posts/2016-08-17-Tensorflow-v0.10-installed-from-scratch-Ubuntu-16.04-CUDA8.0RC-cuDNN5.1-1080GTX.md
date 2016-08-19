@@ -133,7 +133,7 @@ It's now time to install Tensorflow from source as the official binaries are onl
 First, install some general dependancies.
 
 ```
-sudo apt-get install python-pip python-dev python-numpy swig python-dev python-wheel
+sudo apt-get install python-pip python-numpy swig python-dev python-wheel
 ```
 
 ### Install Bazel
@@ -168,13 +168,13 @@ cd tensorflow
 
 ###### Important: fix CROSSTOOL file
 
-Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `cxx_builtin_include_directory: "/usr/local/cuda-8.0"` as below.
+Edit the text file **tensorflow/third_party/gpus/crosstool/CROSSTOOL** and add `cxx_builtin_include_directory: "/usr/local/cuda-8.0/include"` as below.
 
 ```
   cxx_builtin_include_directory: "/usr/lib/gcc/"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
-  cxx_builtin_include_directory: "/usr/local/cuda-8.0"
+  cxx_builtin_include_directory: "/usr/local/cuda-8.0/include"
   tool_path { name: "gcov" path: "/usr/bin/gcov" }
 ```
 
