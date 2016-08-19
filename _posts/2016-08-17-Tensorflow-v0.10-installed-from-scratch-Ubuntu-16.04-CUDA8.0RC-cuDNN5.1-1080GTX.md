@@ -36,7 +36,7 @@ It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia
 
 Choose **Linux > x86_64 > Ubuntu > 16.04 > runfile (local)** and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
 
-The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, **say no when asked if you want to install the driver** (in Nvidia's install guide, they tell use to enter RunLevel 3, but this isn't necessary if we don't install the driver). Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
+The installer has 3 parts, a Nvidia driver, CUDA Toolkit and CUDA code samples. The Nvidia driver is usually outdated, that's why we installed it before, **say no when asked if you want to install the driver** (in Nvidia's install guide, they tell us to enter RunLevel 3, but this isn't necessary if we don't install the driver). Then, let everything as default, install the code samples to check your CUDA installation. To avoid an error about GCC 5.4.0, add `--override`. Then, once the installation is over, run the patch.
 
 ```
 sudo sh cuda_8.0.27_linux.run --override
