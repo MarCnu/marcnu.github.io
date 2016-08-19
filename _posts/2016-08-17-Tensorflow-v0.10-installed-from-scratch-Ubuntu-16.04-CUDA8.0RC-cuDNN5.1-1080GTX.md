@@ -32,7 +32,7 @@ The solution is to enter the terminal with `CTRL+ALT+F1` and reinstall the drive
 
 ### Install the Toolkit
 
-It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia.com/cuda-release-candidate-download) and create an account if you don't already have one and log in (I think this is only required for RC versions of CUDA, which is the case currently for CUDA 8.0RC, an account is also required to download cdDNN).
+It's now time for CUDA. Go to the [Nvidia CUDA website](https://developer.nvidia.com/cuda-release-candidate-download) and create an account if you don't already have one and log in (I think this is only required for RC versions of CUDA, which is the case currently for CUDA 8.0RC, an account is also required to download cuDNN).
 
 Choose **Linux > x86_64 > Ubuntu > 16.04 > runfile (local)** and download the base installer and the patch. Ubuntu 16.04 uses GCC 5.4.0 as default C compiler, which caused an issue with CUDA 8.0RC, this is fixed with the patch.
 
