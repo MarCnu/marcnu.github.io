@@ -3,7 +3,7 @@ layout: post
 title: Tensorflow v0.10 installed from scratch on Ubuntu 16.04, CUDA 8.0RC+Patch, cuDNN v5.1 with a 1080GTX
 ---
 
-While Tensorflow has a great documentation, you have quite a lot of details that are not obvious, especially the part about setting up Nvidia libraries and installing Bazel as you need to read external install guides. There is also a CROSSTOOL change to make to fix an include directory issue. So here is a guide, explaining everything from scratch. So here is a full guide, with everything in a single page.
+While Tensorflow has a great documentation, you have quite a lot of details that are not obvious, especially the part about setting up Nvidia libraries and installing Bazel as you need to read external install guides. There is also a CROSSTOOL change to make to fix an include directory issue. So here is a guide, explaining everything from scratch, with everything in a single page.
 
 ## 1. Installing Nvidia drivers
 
