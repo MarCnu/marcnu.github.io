@@ -80,7 +80,7 @@ nvcc --version
 ```
 cd NVIDIA_CUDA-8.0_Samples/1_Utilities/bandwidthTest/
 make
-./bandwitdhTest
+./bandwidthTest
 ```
 
 You should get an output that looks like this:
