@@ -9,7 +9,7 @@ The Netgear A6100 USB Wifi-adapter doesn't work by default on Linux. You have qu
 
 ![Netgear A6100 adapter]({{ site.baseurl }}/images/NetgearA6100_1.jpg)
 
-I shamelessly stole those pictures from that article on the same topic http://www.seanbreeden.com/netgear-a6100-wifi-usb-mini-adapter-install-for-ubuntu-lubuntu/
+I shamelessly stole those pictures from that article on the same topic [http://www.seanbreeden.com/netgear-a6100-wifi-usb-mini-adapter-install-for-ubuntu-lubuntu/](http://www.seanbreeden.com/netgear-a6100-wifi-usb-mini-adapter-install-for-ubuntu-lubuntu/).
 
 What you need to do is to download the driver source code from Github, compile it and install it.
 
