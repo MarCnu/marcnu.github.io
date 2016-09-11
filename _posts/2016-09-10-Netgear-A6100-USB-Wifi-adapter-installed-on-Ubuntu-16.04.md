@@ -33,7 +33,7 @@ sudo apt-get install linux-headers-$(uname -r) build-essential gcc-5
 
 ## 3. Compile and install the driver
 
-Unzip the file. Then in the terminal, move to the code folder with `cd`. Then build the binary using make. Then install using `make install`. Then add the module to your kernel using `modprobe`. Then add **8812au** to the end of the file /etc/modules with `tee -a` to tell the OS to load the driver when it boots (I am not sure this is mandatory).
+Unzip the file. Then in the terminal, move to the code folder with `cd`. Then build the binary using `make`. Then install using `make install`. Then add the module to your kernel using `modprobe`. Then add **8812au** to the end of the file /etc/modules with `tee -a` to tell the OS to load the driver when it boots (I am not sure this is mandatory).
 
 ```
 cd rtl8812AU-driver-4.3.14
