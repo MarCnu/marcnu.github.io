@@ -17,7 +17,7 @@ What you need to do is to download the driver source code from Github, compile i
 
 As you most likely don't have a Wifi connection on this computer, you can either use an Ethernet cable to download the code, or use a USB key to transfer it from another computer or OS where you have internet access.
 
-I used rtl8812AU-driver-4.3.14 which seem to work fine.
+I used rtl8812AU-driver-4.3.14 which seems to be working fine.
 
 You can either download it from the Web interface https://github.com/diederikdehaas/rtl8812AU `Clone or download > Download ZIP`.
 
