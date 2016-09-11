@@ -51,4 +51,4 @@ The Wifi icon should appear on the top-right corner of your screen. You can add 
 
 After a Ubuntu kernel update, the driver was deleted. I rerun the previous steps and it went back (the Wifi parameters were still in memory).
 
-So keep the code on your computer just in case! And create a text file with the commands to run, to be able to copy/paste it easily offline.
+So keep the code on your computer just in case! And create a text file with the commands to run, to be able to copy/paste it easily offline. By then, you will most likely have forgotten!
