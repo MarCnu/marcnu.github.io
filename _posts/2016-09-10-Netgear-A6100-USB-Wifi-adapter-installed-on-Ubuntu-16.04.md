@@ -25,7 +25,7 @@ Or you can download it from the terminal with `git clone https://github.com/died
 
 ## 2. Install some basic requirements (just in case)
 
-On my computer it was already installed, but in some tutorials they advise you to check that build-essentials are installed. gcc-5 is the default C compiler on Ubuntu 16.04, so it should also already be installed.
+On my computer it was already installed, but in some tutorials they advise you to check that linux-headers and build-essentials are installed. gcc-5 is the default C compiler on Ubuntu 16.04, so it should also already be installed.
 
 ```
 sudo apt-get install linux-headers-$(uname -r) build-essential gcc-5
