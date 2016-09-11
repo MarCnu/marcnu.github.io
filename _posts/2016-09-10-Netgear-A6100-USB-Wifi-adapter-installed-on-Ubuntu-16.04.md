@@ -11,7 +11,7 @@ The Netgear A6100 USB Wifi-adapter doesn't work by default on Linux. You have qu
 
 I shamelessly stole those pictures from that article on the same topic [http://www.seanbreeden.com/netgear-a6100-wifi-usb-mini-adapter-install-for-ubuntu-lubuntu/](http://www.seanbreeden.com/netgear-a6100-wifi-usb-mini-adapter-install-for-ubuntu-lubuntu/).
 
-The driver for this Wifi adapter has the barbaric name **Realtek 8812AU**, or more shortly **rtl8812AU** or just **8812AU**.
+The driver for this Wifi adapter has the barbaric name **Realtek 8812AU**, or more shortly **rtl8812AU** or just **8812au**.
 
 ## 1. Find a way to get the code on your computer
 
