@@ -45,7 +45,7 @@ echo 8812au | sudo tee -a /etc/modules
 
 That's it, it seems freightening if you never did it before, but no, there shoudn't be any issue.
 
-The Wifi icon should appear on the top-right corner of your screen. You can add and edit you Wifi password in `Edit Connections...` if necessary.
+The Wifi icon should appear on the top-right corner of your screen. You can add and edit your Wifi password in `Edit Connections...` if necessary.
 
 ## Bonus: Keep the files in case of kernel update
 
