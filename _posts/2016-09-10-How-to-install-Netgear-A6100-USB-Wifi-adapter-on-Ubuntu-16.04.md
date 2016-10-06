@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Netgear A6100 USB Wifi-adapter installed on Ubuntu 16.04
+title: How to install Netgear A6100 USB Wifi-adapter on Ubuntu 16.04
 ---
 
 The Netgear A6100 USB Wifi-adapter doesn't work by default on Linux. You have quite a lot of resources about how to install it. I add just one more article on that subject for those on Ubuntu 16.04 who are not sure if it still works, short answer, yes, everything works fine! While the installation process can seem quite threatening for those who have never seen `modprobe` used, or who never compiled from source, it is simple and works well.
