@@ -52,3 +52,11 @@ The usual Wifi icon should appear on the top-right corner of your screen. You ca
 After a Ubuntu kernel update, the driver was deleted. I rerun the previous steps and it went back (the Wifi parameters were still in memory).
 
 So keep the code on your computer just in case! And create a text file with the commands to run, to be able to copy/paste it easily offline. By then, you will most likely have forgotten!
+
+Linux wouldn't be Linux if it was easy!
+
+### Bonus 2017: If you want a test of 2017 Wifi-adapters, look here
+
+This article is getting old, if you are looking to buy a more up to date Wifi-adapter, here is a test: http://www.2kreviews.com/best-usb-wifi-adapter/
+
+That being said, the drivers may be different, maybe it will be managed by default, maybe not. You never know what you will get, that's part of the magic of Linux!
