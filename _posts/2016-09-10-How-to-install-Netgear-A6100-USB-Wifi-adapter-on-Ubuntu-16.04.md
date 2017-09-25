@@ -57,6 +57,6 @@ Linux wouldn't be Linux if it was easy!
 
 ## Bonus 2017: If you want a test of 2017 Wifi-adapters, look here
 
-This article is getting old, if you are looking to buy a more up to date Wifi-adapter, here is a test: http://www.2kreviews.com/best-usb-wifi-adapter/
+This article is getting old, if you are looking to buy a more up to date Wifi-adapter, here is a test: [http://www.2kreviews.com/best-usb-wifi-adapter/](http://www.2kreviews.com/best-usb-wifi-adapter/)
 
 That being said, the drivers may be different, maybe it will be managed by default, maybe not. You never know what you will get, that's part of the magic of Linux!
