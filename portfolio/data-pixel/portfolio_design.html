@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Marceau CNUDDE</title>
+
+<style>
+    body {
+        font-family: "Inter", Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 40px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 42px;
+        margin: 0;
+        font-weight: 900;
+    }
+
+    h2.subtitle {
+        margin: 0 0 30px 0;
+        font-weight: 300;
+        font-size: 28px;
+        color: #666;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .intro {
+        margin-bottom: 40px;
+        color: #444;
+        font-size: 18px;
+    }
+
+    /* GRID 2 COLONNES */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 30px;
+    }
+
+    /* CARTES */
+    .card {
+        position: relative;              /* nécessaire pour le ::before */
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        overflow: hidden;                /* pour contenir les pseudo-éléments */
+        transition: background 0.3s ease;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;                      /* largeur de la barre */
+        height: 100%;
+        background: #5099DA;
+        transition: width 0.3s ease;     /* animation de la barre */
+    }
+
+    .card:hover {
+        background: #f0f0f0;             /* fond légèrement gris */
+    }
+
+    .card:hover::before {
+        width: 8px;                      /* la barre “grandit” */
+    }
+
+    .card-content {
+        transition: transform 0.3s ease;  /* déplacement du texte */
+    }
+
+    .card:hover .card-content {
+        transform: translateX(10px);     /* texte qui se décale */
+    }
+
+
+    .card h3 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .card ul {
+        padding-left: 18px;
+    }
+
+    .card img {
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    /* BOUTON LIEN VIDÉO */
+        .video-link {
+        display: inline-block;
+        margin-top: 15px;
+        background: #5099DA;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    /* le centrer */
+    .video-container + .video-link {
+        text-align: center;
+        display: block;       /* s'assure que le margin auto fonctionne */
+        margin: 15px auto 0;  /* top / left+right / bottom */
+    }
+
+    .video-link:hover {
+        background: #2563eb;
+    }
+    
+    .video-container {
+        text-align: center;     /* Centers inline elements like iframe */
+    }
+
+    .video-container iframe {
+        display: block;
+        margin: 15px auto;      /* Centers block elements perfectly */
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;   /* keeps aspect ratio */
+    }
+    
+    .image-row {
+        display: flex;           /* Affiche les images en ligne */
+        gap: 10px;               /* Espace entre les images */
+        flex-wrap: wrap;         /* Permet de passer à la ligne si l’espace est trop petit */
+    }
+
+    .image-row img {
+        max-width: 45%;         /* S’assure que l’image ne dépasse pas du conteneur */
+        height: auto;            /* Garde les proportions */
+    }
+    
+    .img-centered {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Portfolio – Marceau CNUDDE</h1>
+    <h2 class="subtitle">pour data-pixel</h2>
+
+    <p class="intro">
+        Voici mes projets les plus marquants avec des compétences en lien avec ce que vous recherchez.
+    </p>
+
+    <div class="grid">
+
+        
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Fine-tuning de RetinaNet – PyTorch (Détection d’objets)</h3>
+                <ul>
+                    <li>Chargement d’un réseau de neurones pré-entraîné</li>
+                    <li>Remplacement de la couche de détection pour l’adapter à un nouveau dataset</li>
+                    <li>Fine-tuning sur un jeu de données personnel</li>
+                </ul>
+            </div>
+            
+            <img src="retinanet.png" alt="Retinanet">
+        </div></div>
+
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Bot de farm 100% vision – OpenCV</h3>
+                <ul>
+                    <li>3 ordinateurs : <b>PC du jeu vidéo</b> + <b>PC Bot</b> + <b>Raspberry Pi Zero</b> (clavier/souris)</li>
+                    <li>Subprocess FFMPEG (décodage vidéo) > Threading (conversion numpy) pour une faible latence</li>
+                    <li>OpenCV : Edge detector + Line detector + Template matching</li>
+                    <li>Communication websocket (plus rapide que POST+Json)</li>
+                    <li>Gestion bit par bit de l’écriture des buffers USB (analyse avec Wireshark)</li>
+                </ul>
+            </div>
+            
+            <img src="bot_vision.png" alt="Bot vision">
+            <div class="video-container">
+                <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/ag5ce9?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a class="video-link" href="https://streamable.com/ag5ce9" target="_blank">
+                Lien Vidéo (3:39)
+            </a>
+        </div></div>
+        
+        
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Robot avec Arduino / Raspberry Pi – Contrôle de Servo Moteur</h3>
+                <ul>
+                    <li><em>Projet en cours, objectif : location and mapping SLAM dans les prochaines semaines</em></li>
+                    <li>Architecture à 2 threads : serveur web Flask + contrôle servo moteur</li>
+                    <li style="background-color: #FFF2CC; padding-left: 16px"><strong>Bonus data-pixel :</strong> installation C++/QT et traduction du front-end vers QT via ChatGPT</li>
+                </ul>
+            </div>
+
+            <img style="width:50%;" class="img-centered" src="robot.png" alt="Robot Arduino Raspberry Pi">
+            <div class="video-container">
+                <iframe height=300" allow="fullscreen" allowfullscreen src="https://streamable.com/e/edn2qz?loop=0" style="border:none;"></iframe>
+            </div>
+            <a class="video-link" href="https://streamable.com/edn2qz" target="_blank">
+                Lien Vidéo (0:27)
+            </a>
+        </div></div>
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Transformation d’un objet physique (flûte traversière) en périphérique USB – PyTorch, OpenCV</h3>
+                <ul>
+                    <li>Conversion des mouvements et du son de la flûte en actions clavier/souris USB</li>
+                    <li>Détection des notes : Microphone → FFT → mapping vers clics/boutons clavier</li>
+                    <li>Détection d’orientation : Rotation verticale de la flûte → ConvNet → Edge Detector + Line Detector
+→ Calcul en temps réel de l’angle de la flûte → déplacement horizontal de la souris</li>
+                    <li>Annotation des images (LabelBox), sélection de l’architecture du ConvNet</li>
+                    <li>Segmentation d'image pixel par pixel et entraînement du modèle</li>
+                </ul>
+            </div>
+            
+            <img src="flute_dataset.png" alt="Flute dateset">
+            <img src="flute_gameplay.png" alt="Flute gameplay">
+            <div class="video-container">
+                <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/yqigrk?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a class="video-link" href="https://streamable.com/yqigrk" target="_blank">
+                Lien Vidéo (1:29)
+            </a>
+        </div></div>
+        
+        
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Bloqueur de publicités pour applications natives – Android</h3>
+                <ul>
+                    <li>Optimisation avancée du pipeline de rendu avec gestion des back-buffers pour améliorer la fluidité de l’affichage.</li>
+                </ul>
+            </div>
+            
+            <img src="AppYoutubeScreenshot.png" alt="AppAdblock">
+            <img style="width:40%;" class="img-centered" src="phone_photo.png" alt="Phone adblock photo">
+            <div class="video-container">
+                <iframe height=300" allow="fullscreen" allowfullscreen src="https://streamable.com/e/6so1lh?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a height=300" class="video-link" href="https://streamable.com/6so1lh" target="_blank">
+                Lien Vidéo (0:32)
+            </a>
+        </div></div>
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Enregistreur caméra + audio Bluetooth MIDI – Android, C++/Kotlin</h3>
+                <ul>
+                    <li>Implémentation complète du protocole Bluetooth MIDI en Kotlin</li>
+                    <li>Pont Java ↔ C++ via JNI pour un rendu audio en temps réel</li>
+                </ul>
+            </div>
+            <div class="image-row">
+                <img src="midi1.jpg" alt="Midi1">
+                <img src="midi2.jpg" alt="Midi2">
+            </div>
+            <img src="piano_photo.png" alt="Photo app piano">
+            <div class="video-container">
+                <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/abyuok?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a class="video-link" href="https://streamable.com/abyuok" target="_blank">
+                Lien Vidéo (0:41)
+            </a>
+        </div></div>
+        
+        
+        
+        
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Fractale de Mandelbrot – C++/CUDA multithread</h3>
+                <ul>
+                    <li>Version CPU simple : 1–3 s par frame</li>
+                    <li>Version GPU optimisée : 100 ms par frame</li>
+                </ul>
+            </div>
+            
+            <img src="mandelbrot.png" alt="Mandelbrot">
+            <div class="video-container">
+                <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/lwvkmb?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a class="video-link" href="https://streamable.com/lwvkmb" target="_blank">
+                Lien Vidéo (0:20)
+            </a>
+        </div></div>
+        
+        <div class="card"><div class="card-content">
+            <div>
+                <h3>Moteur physique – C++ avec rendu VTK</h3>
+                <ul>
+                    <li>Gestion mémoire avec pointeurs intelligents (ramasse-miettes)</li>
+                </ul>
+            </div>
+            
+            <img src="moteurphysique.png" alt="Moteur physique">
+            <div class="video-container">
+                <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/4ivq2d?loop=0" style="border:none;"></iframe>
+            </div>
+            
+            <a class="video-link" href="https://streamable.com/4ivq2d" target="_blank">
+                Lien Vidéo (0:04)
+            </a>
+        </div></div>
+        
+        
+        
+
+    </div>
+
+</div>
+
+</body>
+</html>
